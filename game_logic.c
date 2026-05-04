@@ -20,3 +20,15 @@ void generate_colors(int secret_colors[], int color_count)
 		*(secret_colors + i) = rand() % color_count + 1;
 	}
 }
+
+void eval_guess(int secret_colors[], int player_guess[],
+	int* black_pins, int* white_pins)
+{
+	for (int i = 0; i < 4; i++)
+	{
+		if (secret_colors[i] == player_guess[i])
+		{
+			*black_pins ++;
+		}
+	}
+}

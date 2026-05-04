@@ -3,6 +3,6 @@
 
 int main()
 {
-	test_generate_colors();
+	test_generate_colors(1);
 	return 0;
 }

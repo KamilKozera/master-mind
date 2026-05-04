@@ -1,3 +1,3 @@
 #pragma once
 
-void test_generate_colors();
+void test_generate_colors(int debug);
