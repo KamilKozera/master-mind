@@ -22,13 +22,15 @@ void generate_colors(int secret_colors[], int color_count)
 }
 
 void eval_guess(int secret_colors[], int player_guess[],
-	int* black_pins, int* white_pins)
+	unsigned int* black_pins, unsigned int* white_pins)
 {
+	*black_pins = 0;
+	*white_pins = 0;
 	for (int i = 0; i < 4; i++)
 	{
-		if (secret_colors[i] == player_guess[i])
+		if (*(secret_colors + i) == *(player_guess + i))
 		{
-			*black_pins ++;
+			(*black_pins)++;
 		}
 	}
 }

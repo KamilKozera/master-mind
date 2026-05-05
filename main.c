@@ -3,6 +3,7 @@
 
 int main()
 {
-	test_generate_colors(1);
+	//test_generate_colors(1);
+	test_eval_guess();
 	return 0;
 }
