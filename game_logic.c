@@ -57,7 +57,11 @@ void eval_guess(int secret_colors[], int player_guess[],
 	{
 		for (int j = 0; j < _max_iter; j++)
 		{
-			if (guess_copy[i] == secret_copy[j])
+			/*	check only if guess_copy is not - 1, otherwise
+				white_pins would be incremented when in reality
+				it is a black_pin
+			*/
+			if (guess_copy[i] != -1 && guess_copy[i] == secret_copy[j])
 			{
 				(*white_pins)++;
 				guess_copy[i] = -1;
