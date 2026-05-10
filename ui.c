@@ -23,8 +23,19 @@ int get_difficulty() {
 
 void get_player_guess(int guess[], int color_count) {
     printf("Enter 4 digits (1-%d) separated by spaces: ", color_count);
-    for (int i = 0; i < 4; i++) {
-        scanf("%d", &guess[i]);
+    while (1) {
+        printf("Enter 4 digits (1-%d) separated by spaces: ", color_count);
+
+        int ok = 0;
+        for (int i = 0; i < 4; i++) {
+            ok += scanf("%d", &guess[i]); 
+        }
+        while (getchar() != '\n'); // clear buffer to prevent infinite loops from letters
+
+        if (ok == 4) break;
+
+        printf("Error: Enter numbers only!\n");
+
     }
 }
 
@@ -46,8 +57,8 @@ void display_final_result(int won, int secret_code[]) {
     if (won == 1) {
         printf("\n Gratulacje Graczu, zwyciezyles...\n");
     } else {
-        printf("\n Gorycz porazki unosi się w powietrzu... nie tym razem graczu \n");
-        printf("Oto szyfr który cie pokonał: ");
+        printf("\n Gorycz porazki unosi sie w powietrzu... nie tym razem graczu \n");
+        printf("Oto szyfr ktory cie pokonal: ");
         for (int i = 0; i < 4; i++) {
             printf("%d ", secret_code[i]);
         }
