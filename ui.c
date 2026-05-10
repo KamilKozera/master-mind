@@ -9,13 +9,21 @@ void clear_screen() {
 
 int get_difficulty() {
     int choice;
+  do {
     printf("Choose the difficulty level:\n");
     printf("1. Easy (1-4)\n");
     printf("2. Medium (1-6)\n");
     printf("3. Hard (Be careful!) (1-8)\n");
     printf("Your choice: ");
     scanf("%d", &choice);
-    
+
+    while (getchar() != '\n'); // clear buffer
+
+    if (choice < 1 || choice > 3) {
+        printf("Invalid choice. Please choose 1, 2, or 3.\n");
+    }
+
+} while (choice < 1 || choice > 3);
     if (choice == 1) return 4;
     if (choice == 2) return 6;
     return 8;
