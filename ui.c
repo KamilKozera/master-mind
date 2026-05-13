@@ -30,20 +30,25 @@ int get_difficulty() {
 }
 
 void get_player_guess(int guess[], int color_count) {
-    printf("Enter 4 digits (1-%d) separated by spaces: ", color_count);
+    
+    char input_buffer[100];    // Line-buffered input for robust validation and stream synchronization.
+
     while (1) {
         printf("Enter 4 digits (1-%d) separated by spaces: ", color_count);
 
-        int ok = 0;
-        for (int i = 0; i < 4; i++) {
-            ok += scanf("%d", &guess[i]); 
+        if (fgets(input_buffer, sizeof(input_buffer), stdin) == NULL) continue;
+
+        int items_read = sscanf(input_buffer, "%d %d %d %d", &guess[0], &guess[1], &guess[2], &guess[3]);
+
+        if (items_read == 4 &&
+            guess[0] >= 1 && guess[0] <= color_count &&
+            guess[1] >= 1 && guess[1] <= color_count &&
+            guess[2] >= 1 && guess[2] <= color_count &&
+            guess[3] >= 1 && guess[3] <= color_count) {
+            break;
         }
-        while (getchar() != '\n'); // clear buffer to prevent infinite loops from letters
 
-        if (ok == 4) break;
-
-        printf("Error: Enter numbers only!\n");
-
+        printf("Prosze porzadnie przeczytac polecenie...\n");
     }
 }
 
