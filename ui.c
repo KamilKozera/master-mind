@@ -30,7 +30,6 @@ int get_difficulty() {
 }
 
 void get_player_guess(int guess[], int color_count) {
-    printf("Enter 4 digits (1-%d) separated by spaces: ", color_count);
     while (1) {
         printf("Enter 4 digits (1-%d) separated by spaces: ", color_count);
 
@@ -49,7 +48,7 @@ void get_player_guess(int guess[], int color_count) {
 
 
 void display_board(int history[][4], int results[][2], int attempts) {
-    printf("\n Mastermind Board\n");
+    printf("\nMastermind Board\n");
     for (int i = 0; i < attempts; i++) {
         printf("Attempt %d: [ ", i + 1);
         for (int j = 0; j < 4; j++) {
