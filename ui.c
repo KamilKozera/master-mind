@@ -31,7 +31,7 @@ int get_difficulty() {
 
 void get_player_guess(int guess[], int color_count) {
     
-    char input_buffer[100];    // Line-buffered input for robust validation and stream synchronization.
+    char input_buffer[100];
 
     while (1) {
         printf("Uloz rzad 4 klejnotow (cyfry 1-%d oddzielone spacjami): ", color_count);
@@ -81,7 +81,7 @@ void display_final_result(int won, int secret_code[]) {
 
 int ask_to_play_again() {
     int choice;
-    printf("\n \"Sukces nie jest ostateczny, porazka nie jest fatalna : liczy sie odwaga, by kontynuowac  — Winston Churchill\"\n");
+    printf("\n\"Sukces nie jest ostateczny, porazka nie jest fatalna : liczy sie odwaga, by kontynuowac - Winston Churchill\"\n");
     printf("Czy podejmiesz kolejna probe? (1 - Tak, 0 - Nie): ");
     (void)scanf("%d", &choice);
 
