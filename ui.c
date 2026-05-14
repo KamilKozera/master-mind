@@ -93,7 +93,7 @@ int ask_to_play_again() {
 int get_attempts_limit() {
     int attempts;
     do {
-        printf("Na ile uderzen serca starczy Ci many? (Wybierz 8, 10 lub 12 prob): ");
+        printf("Na ile prob starczy Ci many? (Wybierz 8, 10 lub 12 prob): ");
         (void)scanf("%d", &attempts);
         while (getchar() != '\n');
 

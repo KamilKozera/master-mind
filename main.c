@@ -22,7 +22,7 @@ int main() {
         int won = 0;
 
         clear_screen();
-        printf("Code generated! You have %d attempts.\n", max_attempts);
+        printf("Pieczec zostala nalozona! Masz %d prob na jej zlamanie.\n", max_attempts);
 
         
         for (int i = 0; i < max_attempts; i++) {
